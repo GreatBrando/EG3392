@@ -29,7 +29,7 @@ public class Polygon extends GeometricObject1 {
 	}
 	
 	public double getAngle(){
-		return (side-2)*(180/side);
+		return (side-2)*(180.0/side);
 	}
 	
 	public double getPerimeter(){

@@ -6,7 +6,8 @@ public class GeometricObject1 {
 	private Date dateCreated;
 	
 	public GeometricObject1(){
-		
+		super();
+		dateCreated = new Date();
 	}
 	
 	public String getColor() {
