@@ -25,12 +25,13 @@ public class Loan extends JFrame {
   JPanel panel2;
   
   //Labels
+  JLabel blank;
   JLabel annual;
   JLabel number;
   JLabel loan;
   JLabel month;
   JLabel total;
-  JLabel title;
+  
   
   //TextFields
   JTextField txtAnnIntRate;
@@ -51,21 +52,20 @@ public class Loan extends JFrame {
     setPreferredSize(new Dimension(700,300));
     setTitle("Loan Calculator");
     
-    Border newBorder = BorderFactory.createDashedBorder(Color.blue);
-    
+    Border newBorder = BorderFactory.createTitledBorder("Enter loan amount, interest rate, and years");
     
     panel = new JPanel(); // Creates new Panel, Default Layout FlowLayout
     panel.setBorder(newBorder);
-    panel.setLayout(new GridLayout(6,2));    // create 5 rows and 2 columns
+    panel.setLayout(new GridLayout(5,2));    // create 5 rows and 2 columns
 	panel.setSize(500, 200); //sets size
 	panel.setLocation(50, 50); //sets location
  
 	
-	panel1 = new JPanel();
-	panel1.setPreferredSize(new Dimension(10, 30)); 
+	 
 	
 	panel2 = new JPanel();
-	panel2.setPreferredSize(new Dimension(40, 90)); 
+	panel2.setLayout(new GridLayout(1,2));
+	 
 	
 	
     //Label Components
@@ -74,7 +74,8 @@ public class Loan extends JFrame {
     loan = new JLabel("Loan Amount");
     month = new JLabel("Monthly Payment");
     total = new JLabel ("Total Payment");
-    title = new JLabel("Enter loan amount, interest rate, and years");
+   
+    blank = new JLabel("");
     
     
     //TextField Components
@@ -121,11 +122,11 @@ public class Loan extends JFrame {
     
     
     //Add Components
-    add(panel1, BorderLayout.NORTH);
-    panel1.add(title);
     
     add(panel2, BorderLayout.SOUTH);
+    panel2.add(blank);
     panel2.add(compute);
+    compute.setPreferredSize(new Dimension(40,40));
     
     add(panel);
     panel.add(annual);
